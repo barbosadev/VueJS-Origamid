@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Js</title>
+</head>
+
+<body>
+
+  <div id="app">
+    {{total}}
+    <br />
+    <button @click="incrementar">Incrementar</button>
+    <button @click="diminuir">Diminuir</button>
+  </div>
+  <br />
+  <div id="app2">
+    <button @click="alteraVerPreco">Ver Preço</button>
+    <br />
+    <br />
+    <span v-if="verPreco">
+      <p>LatestTime: {{acoes.latestTime}}</p>
+      <p>LatestPrice: {{acoes.latestPrice}}</p>
+      <p>companyName: {{acoes.companyName}}</p>
+    </span>
+  </div>
+  <!--
+  Utilizando a API
+  https://cloud.iexapis.com/stable/stock/aapl/quote?token=TOKENAQUI
+
+  https://cloud.iexapis.com/stable/stock/aapl/quote?token=sk_4d0bfcef5e8742baae30a6994e373724
+
+  Não se esqueça de se cadastrar em: https://iexcloud.io/ para gerar o seu token:
+
+  Crie um método que faça o fetch da resposta acima
+  O método deve ser ativado ao clique no botão Ver Preço
+
+  Coloque a resposta json do fetch em uma data e
+  mostre o valor de lalestPrice, latestTime e o
+  companyName na interface.
+-->
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
