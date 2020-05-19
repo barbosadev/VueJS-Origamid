@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Js</title>
+</head>
+
+<body>
+
+  <div id="app">
+    {{$data._empresa}}, {{$data.$produto}}
+  </div>
+
+  <div id="app2">
+
+    Lado: {{lado}}<br />
+    Perimetro: {{lado*4}}<br />
+    Área: {{lado*lado}}<br />
+    <button @click="lado++">Aumentar</button>
+    <button @click="lado--">Diminuir</button>
+  </div>
+
+  <!-- Crie uma instância que mostre
+baseado no valor do lado do quadrado
+o seu perímetro (lX4) e área (lXl).
+O lado do quadrado deve ser um estado reativo -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
