@@ -12,7 +12,6 @@ const vm = new Vue({
         .then(json => {
           this.companyName = json[0].symbol;
           this.latestPrice = json[0].lastSalePrice;
-          this.marketCap = json[0].symbol;
         });
     }
   }
