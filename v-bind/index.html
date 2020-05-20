@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Js</title>
+</head>
+
+<body>
+  <!--
+  Utilizando as API's
+  https://api.iextrading.com/1.0/stock/aapl/quote
+  https://api.iextrading.com/1.0/stock/googl/quote
+
+  - Compare o marketCap (valor de
+  mercado) entre ambas.
+
+  - Mostre o nome das empresas e o valor
+  na interace (companyName e marketCap).
+
+  - Mude a cor para verde o nome da empresa com
+  maior marketCap e vermelho a com menor.
+-->
+  <style>
+    .vermelho {
+      color: red;
+    }
+
+    .verde {
+      color: green;
+    }
+  </style>
+
+  <div id="app">
+    <button @click="buscaValores">Buscar</button>
+    <br />
+    Google: <span :class="corGoogle">{{precoGoogl}}</span>
+    <br />
+    Apple: <span :class="corApple">{{precoApple}}</span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
