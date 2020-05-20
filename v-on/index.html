@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Js</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li><a @click.prevent="buscarValores" href="https://api.iextrading.com/1.0/tops?symbols=aapl">Apple</a></li>
+      <li><a @click.prevent="buscarValores" href="https://api.iextrading.com/1.0/tops?symbols=googl">Google</a></li>
+      <li><a @click.prevent="buscarValores" href="https://api.iextrading.com/1.0/tops?symbols=amzn">Amazon</a></li>
+      <li><a @click.prevent="buscarValores" href="https://api.iextrading.com/1.0/tops?symbols=ebay">Ebay</a></li>
+      <li><a @click.prevent="buscarValores" href="https://api.iextrading.com/1.0/tops?symbols=pypl">Paypal</a></li>
+    </ul>
+
+    <div>
+      <p>CompanyName: {{companyName}}</p>
+      <p>latestPrice: {{latestPrice}}</p>
+    </div>
+    <!--
+      Utilizando API
+      https://api.iextrading.com/1.0/stock/aapl/quote
+    
+      Adicione um evento de clique a cada <a> do html
+      acima e previna o comportamento padrão.
+    
+      Faça o fetch dos dados do href ao click e mostre na
+      interface o companyName, latestPrice, marketCap
+    -->
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
