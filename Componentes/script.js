@@ -1,8 +1,12 @@
-import ClimaRio from './ClimaRio.js';
+import Cep from './Cep.js';
+import ValorApple from './ValorApple.js';
 
-Vue.component("ClimaRio", ClimaRio);
+Vue.component("Cep", Cep);
 
 const vm = new Vue({
-  el: "#app"
+  el: "#app",
+  components: {
+    ValorApple
+  }
 });
 
