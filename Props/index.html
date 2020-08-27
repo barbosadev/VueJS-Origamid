@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Js</title>
+</head>
+<!-- 
+  Crie um componente com um campo de input e um botão para enviar o valor.
+  Nesse campo de input será possível escrever o simbolo de empresas americanas
+
+  simbolos ex:
+  aapl -> Apple
+  goog -> Google
+  msft -> Microsoft
+  amzn -> Amazon
+  fb -> Facebook
+
+  Ao clicar no botão, faça um fetch com a API:
+  https://api.iextrading.com/1.0/tops?symbols=${simbolo}
+
+  O resultado do fetch deverá ser mostrado em um componente filho do formulário.
+  Envia as informações utilizando prop
+ 
+  Mostre todas as informações do fetch utilizando um loop.
+ -->
+
+<body>
+  <div id="app">
+    <input type="text" v-model="simbolo">
+    <button @click="buscarAcao">Buscar</button><br>
+    <lista-acao :dados="acao" titulo="Retorno"></lista-acao>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
