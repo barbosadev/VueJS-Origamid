@@ -4,10 +4,17 @@
       <ul>
         <li><a @click="componentAberto = 'Sobre'">Sobre</a></li>
         <li><a @click="componentAberto = 'Servicos'">Servicos</a></li>
-        <li><a @click="componentAberto = 'Contato'">Contato</a></li>
+        <li><a @click="modalAtivo = !modalAtivo">Contato</a></li>
       </ul>
     </nav>
     <component :is="componentAberto"></component>
+    <transition appear name="modal">
+      <div v-if="modalAtivo" class="modal">
+        <span class="fechar-modal" @click="modalAtivo = !modalAtivo"> X </span
+        ><br />
+        <h1>Contato</h1>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -26,6 +33,7 @@ export default {
   data() {
     return {
       componentAberto: "Sobre",
+      modalAtivo: false,
     };
   },
 };
@@ -35,14 +43,31 @@ export default {
 a {
   cursor: pointer;
 }
+
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-active,
+.modal-leave-to {
+  transition: opacity 0.3s;
+}
+
+.modal {
+  background-color: #ccc;
+  border-style: solid;
+  border-color: #252525;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.modal > h1 {
+  text-align: center;
+}
+.fechar-modal {
+  background-color: #ff7070;
+  padding: 10px;
+  float: right;
+  cursor: pointer;
+}
 </style>
-<!-- 
-  Crie 3 componentes:
-
-  1: Componente falando sobre a empresa
-  2: Componente com os serviços da empresa
-  3: Componente com um formulário de contato
-
-  Crie um menu, que ao clique ele mude os componentes
-  acima de forma dinâmica. Não destrua o componente
- -->
