@@ -12,15 +12,15 @@
 </template>
 
 <script>
-import Servicos from "./components/Servicos";
-import Sobre from "./components/Sobre";
+//import Servicos from "./components/Servicos";
+//import Sobre from "./components/Sobre";
 import Contato from "./components/Contato";
 
 export default {
   name: "App",
   components: {
-    Servicos,
-    Sobre,
+    Servicos: () => import("./components/Servicos"),
+    Sobre: () => import("./components/Sobre"),
     Contato,
   },
   data() {
